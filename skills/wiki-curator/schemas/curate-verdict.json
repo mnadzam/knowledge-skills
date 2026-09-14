@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wiki Curator Verdict",
+  "description": "Receipt summarizing what the wiki-curator skill changed.",
+  "type": "object",
+  "required": [
+    "pages_merged",
+    "claims_fixed",
+    "pages_deleted",
+    "index_updated",
+    "log_trimmed"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "pages_merged": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Pages consolidated into another page of the same kind and class or entity."
+    },
+    "claims_fixed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Stale claims updated or removed because a contradicted page was wrong."
+    },
+    "pages_deleted": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Pages deleted because they were empty or duplicates."
+    },
+    "index_updated": {
+      "type": "boolean",
+      "description": "Whether index.md or examples/README.md was updated to match the file tree."
+    },
+    "log_trimmed": {
+      "type": "boolean",
+      "description": "Whether older log.md entries were summarized into an archive."
+    }
+  }
+}
